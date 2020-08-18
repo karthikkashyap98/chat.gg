@@ -10,7 +10,7 @@ def new(request):
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'chat/index.html', {})
 
 
 def room(request, room_name):
