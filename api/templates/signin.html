@@ -1,0 +1,35 @@
+<html>
+  <div>
+    <h3>Login 🔑</h3>
+    <form action="/chat/login/" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="username"
+          name="username"
+          placeholder="Username"
+          size="20"
+          style="max-width: 30%"
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="Password"
+          style="max-width: 30%"
+        />
+      </div>
+
+      <div class="form-group">
+        <input class="btn btn-md btn-success" type="submit" /><br /><br />
+        <p><strong>-- OR --</strong></p>
+        <br />
+        <a href="/chat/signup/">Not a user? Click here to signup!</a><br />
+      </div>
+    </form>
+  </div>
+</html>
