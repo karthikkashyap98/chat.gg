@@ -6,13 +6,15 @@
     <title>Chat Room</title>
   </head>
   <body>
-    <div style="text-align: center;">
-      <h1>Welcome to our private Chat room!</h1>
-      <h3>What's up Tan? Miss me?</h3>
-      <img src="{% static 'img/chat.jpeg' %}" alt="logo" />
-      <textarea id="chat-log" cols="85" rows="20"></textarea><br />
+    <a href="/chat/logout/">Logout</a>
+    <div style="text-align: center">
+      <h1>Hi {{user.username}}! Welcome to the room!</h1>
+      <h3><b>{{room_name}}</b></h3>
+      <textarea id="chat-log" cols="85" rows="20">
+{% for message in messages%} {{message.timestamp}}  {{message.sender.username}}: {{message.message}} {% endfor %}</textarea
+      ><br />
       <input
-        placeholder="Type here to talk to sho"
+        placeholder="Type here!"
         id="chat-message-input"
         type="text"
         size="100"

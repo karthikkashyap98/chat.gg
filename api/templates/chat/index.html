@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <a href="/chat/logout/">Logout</a>
     <meta charset="utf-8" />
     <title>Chat Rooms</title>
   </head>
   <body>
+    <h3>Hi {{user.username}}!<h3>
     What chat room would you like to enter?<br />
     <input id="room-name-input" type="text" size="100" /><br />
     <input id="room-name-submit" type="button" value="Enter" />
@@ -21,7 +23,7 @@
 
       document.querySelector("#room-name-submit").onclick = function (e) {
         var roomName = document.querySelector("#room-name-input").value;
-        window.location.pathname = "/chat/" + roomName + "/";
+        window.location.pathname = "/chat/room/" + roomName + "/";
       };
     </script>
   </body>

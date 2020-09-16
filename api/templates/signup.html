@@ -1,0 +1,47 @@
+<html>
+  <h2>Sign Up 🔑</h2>
+  <br />
+  <form action="/chat/signup/" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Full Name"
+        name="fullname"
+        style="max-width: 30%"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="email"
+        placeholder="Email"
+        name="email"
+        style="max-width: 30%"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="username"
+        placeholder="Username"
+        name="username"
+        style="max-width: 30%"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Password"
+        name="password"
+        style="max-width: 30%"
+      />
+    </div>
+    <div class="form-group">
+      <input class="btn btn-md btn-success" type="submit" />
+    </div>
+  </form>
+</html>

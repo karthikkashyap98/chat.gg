@@ -3,6 +3,9 @@ from api import views
 
 urlpatterns = [
     path('', views.index),
-    path('<str:room_name>/', views.room, name='room'),
+    path('room/<str:room_name>/', views.room, name='room'),
     path('home/', views.home),
+    path('login/', views.signin, name='login'),
+    path('logout/', views.sign_out, name='logout'),
+    path('signup/', views.sign_up),
 ]
