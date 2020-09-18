@@ -57,7 +57,8 @@ def sign_out(request):
 
 def sign_up(request):
     if request.method == "POST":
-        fullname = request.POST.get('fullname', None)
+        first_name = request.POST.get('first_name', None)
+        last_name = request.POST.get('last_name', None)
         email = request.POST.get('email', None)
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
@@ -67,11 +68,11 @@ def sign_up(request):
                 username=username,
                 password=password,
                 email=email,
-                first_name=fullname.split()[0],
-                last_name=fullname.split()[1],
+                first_name=first_name,
+                last_name=last_name,
             )
             login(request, user)
-            return redirect("/chat/login/")
+            return redirect("/chat/")
         else:
             return HttpResponse("User already exists. Try new username.")
     return render(request, "signup.html")
