@@ -71,9 +71,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
     def save_to_db(self, message):
         print("called")
         user = User.objects.get(username=self.scope['user'])
+        temp = message
         message += "\n"
         instance = Messages.objects.create(
             sender=user, message=message, chat_room=self.room_name)
         time = instance.timestamp.strftime("%B %d, %Y, %H:%M:%S")
-        message = f"{time} {self.scope['user']}: {message}"
+        message = f"{time} {self.scope['user']}: {temp}"
         return message
