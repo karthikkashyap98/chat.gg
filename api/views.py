@@ -23,7 +23,7 @@ def room(request, room_name):
     if not request.user.is_authenticated:
         return redirect("/chat/login/")
     messages = Messages.objects.filter(
-        chat_room=room_name).order_by('-id')[:10]
+        chat_room=room_name).order_by('id')[10:]
     print(messages)
     return render(request, 'chat/room.html', {
         'room_name': room_name,
