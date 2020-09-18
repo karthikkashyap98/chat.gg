@@ -1,16 +1,15 @@
-<!-- chat/templates/chat/index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-  <a href="/chat/logout/">Logout</a>
-    <meta charset="utf-8" />
-    <title>Chat Rooms</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block nav %}
+	<a class="nav-item nav-link" href="">Hello {{user.get_username}}.</a>
+	<a class="nav-item nav-link" href="/chat/logout/">Logout</a>
+{% endblock %}
+{% block body %}
+<div class="container"><h5 align="right">
     <h3>Hi {{user.username}}!<h3>
-    What chat room would you like to enter?<br />
-    <input id="room-name-input" type="text" size="100" /><br />
-    <input id="room-name-submit" type="button" value="Enter" />
+    What chat room would you like to enter?<br /> <br />
+    <input class="form-control" id="room-name-input" type="text" size="20" style="max-width: 30%" placeholder="Enter the name of chat room"/><br />
+
+    <input class="btn btn-md btn-success" id="room-name-submit" type="button" value="Submit" />
 
     <script>
       document.querySelector("#room-name-input").focus();
@@ -26,5 +25,6 @@
         window.location.pathname = "/chat/room/" + roomName + "/";
       };
     </script>
-  </body>
+    <div>
+{% endblock %}
 </html>
