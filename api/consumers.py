@@ -48,8 +48,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
 
-        await self.save_to_db(message)
-
+        message = await self.save_to_db(message)
         # Send message to room group
         await self.channel_layer.group_send(
             self.room_group_name,
@@ -73,5 +72,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         print("called")
         user = User.objects.get(username=self.scope['user'])
         message += "\n"
-        Messages.objects.create(
+        instance = Messages.objects.create(
             sender=user, message=message, chat_room=self.room_name)
+        message = f"{self.scope['user']} at {instance.timestamp}: {message}"
+        return message
