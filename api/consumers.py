@@ -74,6 +74,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         message += "\n"
         instance = Messages.objects.create(
             sender=user, message=message, chat_room=self.room_name)
-        time = instance.timestamp.strftime("%d %b, %Y,%H:%M:%S")
+        time = instance.timestamp.strftime("%B %d, %Y, %H:%M:%S")
         message = f"{time} {self.scope['user']}: {message}"
         return message
