@@ -1,6 +1,6 @@
 # <img src="https://lh3.googleusercontent.com/2gk4MOJoUf_yqndIXUxiVuVSFhecQBReW1jbZyEvKVU3nslC66_0l1iBFggqPjbkiA" style="vertical-align:middle" width="50" height="50"> CHAT.GG 
 
-## A Web based chat-room-application built with Django and Django Channels 2
+## A Web based chat-room-application built with Django and Channels 2
 
 ### Users can Signup and join chat rooms and chat with multiple users. 
 
